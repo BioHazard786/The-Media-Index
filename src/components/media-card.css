@@ -1,0 +1,235 @@
+.media-container {
+  display: inline-block;
+  position: relative;
+  width: 185px;
+}
+
+.image-container {
+  box-shadow:
+    0 14px 30px rgba(var(--color-shadow-blue), 0.15),
+    0 4px 4px rgba(var(--color-shadow-blue), 0.05);
+  border-radius: 7px;
+  cursor: pointer;
+  display: inline-block;
+  height: 265px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--media-background);
+  animation: fade-in 0.4s ease;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.image {
+  display: block;
+  position: relative;
+  border-radius: 7px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  animation: fade-in 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  /* overflow: clip; */
+  z-index: 8;
+}
+
+.hide {
+  display: none;
+}
+
+.rank {
+  position: absolute;
+  background: var(--media-background);
+  color: var(--media-background-text);
+  font-weight: 800;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  top: -10px;
+  left: -10px;
+  text-align: center;
+  align-items: center;
+  animation: pop-up-animation 0.3s linear;
+  animation-fill-mode: forwards;
+  transform: scale(0);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.number {
+  background: inherit;
+}
+
+.hash {
+  opacity: 0.8;
+  background: inherit;
+  padding-top: 2px;
+  font-size: 0.7rem;
+}
+
+.overlay {
+  background: rgba(var(--color-overlay), 0.9);
+  color: var(--media-text-light);
+  padding: 12px;
+  position: absolute;
+  width: 100%;
+  font-weight: 600;
+  z-index: 10;
+  bottom: -100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.overlay:before {
+  background: var(--media-background);
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.overlay-name,
+.overlay-type {
+  background: transparent;
+}
+
+.overlay-name {
+  font-size: 0.925rem;
+  color: rgb(var(--color-white));
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.overlay:hover .overlay-name {
+  color: var(--media-text-dark);
+}
+
+.overlay-type {
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.image-container:hover .overlay {
+  bottom: 0px;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 0.925rem;
+  text-align: center;
+  line-height: 21px;
+  margin-top: 5px;
+  background-color: transparent;
+  color: rgb(var(--color-gray-700));
+  cursor: pointer;
+  animation: pop-up-animation 0.3s linear;
+  animation-fill-mode: forwards;
+  transform: scale(0);
+}
+
+[data-theme="dark"] .title:hover {
+  color: var(--media-text-light);
+}
+
+[data-theme="light"] .title:hover {
+  color: var(--media-text-dark);
+}
+
+[data-theme="contrast"] .title:hover {
+  color: var(--media-text-dark);
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pop-up-animation {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1040px) {
+  .image-container {
+    aspect-ratio: 185 / 265;
+    height: auto;
+  }
+  .media-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .rank {
+    top: -7px;
+    left: -7px;
+    font-size: 0.9rem;
+  }
+  .hash {
+    font-size: 0.6rem;
+  }
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .image {
+    border-radius: 5px;
+  }
+  .image-container {
+    border-radius: 5px;
+  }
+
+  .overlay {
+    bottom: 0px;
+    padding: 8px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .overlay-name {
+    display: none;
+  }
+  .overlay-type {
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

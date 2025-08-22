@@ -1,0 +1,140 @@
+.search-feild {
+  padding: 5px 16px;
+  padding-left: 13px;
+  margin: 20px 20px 30px;
+  max-width: 100%;
+  background: rgb(var(--color-background-100));
+  border-radius: 6px;
+  box-shadow:
+    0 14px 30px rgba(var(--color-shadow-blue), 0.1),
+    0 4px 4px rgba(var(--color-shadow-blue), 0.04);
+  align-items: center;
+  grid-gap: 15px;
+  height: 42px;
+  display: grid;
+  grid-template-columns: 13px auto 13px;
+}
+
+.search-icon,
+.cross-icon {
+  background: rgb(var(--color-background-100));
+  display: inline-flex;
+  align-items: center;
+  color: rgb(var(--color-gray-400));
+}
+
+.cross-icon {
+  animation: sub-search-animation 0.2s ease-in-out;
+}
+.search-icon {
+  font-size: 0.9rem;
+}
+
+.cross-icon:hover {
+  color: rgb(var(--color-gray-500));
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  background: rgb(var(--color-background-100));
+  color: rgb(var(--color-gray-700));
+  width: 100%;
+  padding-top: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.secondary-filters {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 23px;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.sub-search {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sub-search-text {
+  padding-top: 2px;
+}
+
+.sub-search-container {
+  border-radius: 6px;
+  color: rgb(var(--color-white));
+  cursor: pointer;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 13px;
+  margin-right: 20px;
+  padding: 5px 8px;
+  align-items: center;
+  animation: sub-search-animation 0.2s ease-in-out;
+  text-transform: capitalize;
+}
+
+.sub-search-text,
+.sub-search-container,
+.sub-cross-icon {
+  background: rgb(var(--color-blue-600));
+}
+
+.tags-icon {
+  color: rgb(var(--color-gray-500));
+  font-size: 1.2rem;
+  margin-right: 16px;
+  animation: sub-search-animation 0.2s ease-in-out;
+}
+
+.sub-cross-icon {
+  color: rgb(var(--color-blue-300));
+  font-size: 0.7rem;
+  margin-left: 5px;
+  display: none;
+}
+
+@keyframes sub-search-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.91);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.sub-search-container:hover .sub-cross-icon {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .sub-cross-icon {
+    display: block;
+  }
+
+  .tags-icon {
+    font-size: 1.1rem;
+  }
+
+  .sub-search-container {
+    font-size: 0.7rem;
+  }
+
+  .sub-cross-icon {
+    font-size: 0.65rem;
+  }
+}
