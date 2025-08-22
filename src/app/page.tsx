@@ -16,7 +16,7 @@ export default async function Home({ searchParams }: PageProps) {
     queryKey: ['media', search],
     queryFn: ({ pageParam }: { pageParam: number | undefined }) =>
       getMedia({
-        query: search as string | undefined,
+        query: search as string,
         cursor: pageParam,
       }),
     initialPageParam: undefined as number | undefined,
