@@ -1,6 +1,7 @@
 import './media-grid.css';
 import Loading from '@/components/loading';
 import MediaCard from '@/components/media-card';
+import NoResults from '@/components/no-results';
 import { useDebouncedSearchParam } from '@/hooks/use-debounceed-search-param';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { useMedia } from '@/hooks/use-media';
@@ -48,6 +49,10 @@ function MediaGrid({ searchTerm }: { searchTerm: string }) {
   }
 
   const mediaData = data?.pages.flatMap((page) => page.data) || [];
+
+  if (mediaData.length === 0) {
+    return <NoResults />;
+  }
 
   return (
     <div className="media-grid">

@@ -27,7 +27,7 @@ export async function getMedia({
     pipeline = [
       {
         $search: {
-          index: 'title_search',
+          index: process.env.SEARCH_INDEX_NAME || 'title_search',
           text: {
             query,
             path: ['name', 'alt_name'],

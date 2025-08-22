@@ -1,0 +1,52 @@
+.no-results-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 30px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgb(var(--color-text));
+  animation: fade-in 0.4s ease;
+  opacity: 1;
+}
+
+.no-results {
+  padding-top: 30px;
+}
+
+.no-results-emoji {
+  height: 50px;
+  width: 50px;
+}
+
+.marshmallow-emoji {
+  fill: none;
+  stroke: rgb(var(--color-text));
+  stroke-linecap: round;
+  stroke-width: 18;
+  stroke-linejoin: round;
+}
+
+.marshmallow-emoji-face {
+  stroke-width: 17;
+}
+
+@media (max-width: 760px) {
+  .marshmallow-emoji {
+    stroke-width: 16;
+  }
+
+  .marshmallow-emoji-face {
+    stroke-width: 15;
+  }
+
+  .no-results {
+    padding-top: 20px;
+  }
+
+  .no-results-wrapper {
+    padding-top: 50px;
+  }
+}

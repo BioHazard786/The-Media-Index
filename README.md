@@ -47,7 +47,8 @@ Create a `.env.local` file in the root directory with the following variables:
 
 ```env
 MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority
-CHANNEL_LINK=https://t.me/<your-telegram-channel>
+NEXT_PUBLIC_CHANNEL_LINK=https://t.me/<your-telegram-channel>
+SEARCH_INDEX_NAME=<your-mongodb-search-index-name>
 ```
 
 ### 4. Run the development server
@@ -63,6 +64,16 @@ bun run dev
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## MongoDB Collection Schema
+
+### MongoDB Search Index
+
+If you are using MongoDB Atlas, you need to create a search index for efficient text search:
+
+1. Go to your cluster in MongoDB Atlas.
+2. Navigate to **Collections** and select your database and the `INDEX` collection.
+3. Click on the **Search Indexes** tab.
+4. Click **Create Search Index** and choose the fields you want to index (e.g., `name`, `alt_name`, etc.).
+5. Save the index.
 
 The main collection is called `INDEX`. Example schema:
 
@@ -103,7 +114,7 @@ bunx ultracite format
 
 ## Deployment
 
-Deploy easily on [Vercel](https://vercel.com/) or any platform supporting Next.js.
+Deploy easily on [Vercel](https://vercel.com/) or [Netlify](https://netlify.com/) or any platform supporting Next.js.
 
 ## License
 

@@ -42,7 +42,7 @@ function MediaCard({ media, index }: { media: Media; index: number }) {
       </div>
       <a
         className="image-container"
-        href={`${process.env.CHANNEL_LINK}/${media._id}`}
+        href={`${process.env.NEXT_PUBLIC_CHANNEL_LINK}/${media._id}`}
         target="_blank"
       >
         <Image
@@ -62,7 +62,7 @@ function MediaCard({ media, index }: { media: Media; index: number }) {
       </a>
       <a
         className="title"
-        href={`${process.env.CHANNEL_LINK}/${media._id}`}
+        href={`${process.env.NEXT_PUBLIC_CHANNEL_LINK}/${media._id}`}
         target="_blank"
       >
         {media.name !== 'none' ? media.name : media.alt_name}
