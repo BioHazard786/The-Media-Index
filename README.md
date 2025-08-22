@@ -27,7 +27,7 @@ Below are some screenshots of The Media Index app:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/the-media-index.git
+git clone https://github.com/BioHazard786/The-Media-Index.git
 cd the-media-index
 ```
 
@@ -113,4 +113,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Mohd Zaid - [Telegram](https://t.me/LuLu786) - <bzatch70@gmail.com>
 
-Project Link: [https://github.com/BioHazard786/Alternate](https://github.com/BioHazard786/Alternate)
+Project Link: [https://github.com/BioHazard786/The-Media-Index](https://github.com/BioHazard786/The-Media-Index)
