@@ -1,4 +1,8 @@
-import { QueryClient } from '@tanstack/react-query';
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from '@tanstack/react-query';
 import Header from '@/components/header';
 import Search from '@/components/search';
 import { getMedia } from '@/server/actions';
@@ -23,9 +27,11 @@ export default async function Home({ searchParams }: PageProps) {
   });
 
   return (
-    <div className="container">
-      <Header />
-      <Search />
-    </div>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <div className="container">
+        <Header />
+        <Search />
+      </div>
+    </HydrationBoundary>
   );
 }
